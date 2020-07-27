@@ -1,15 +1,20 @@
 import React from "react";
-import useMagicLink from 'use-magic-link';
 import {
-  Link
+  Link,
+  useHistory
 } from "react-router-dom";
 
 
 
 export default function Header() {
-    const auth = useMagicLink('pk_test_F6EACA7E7AB6A6EF');
-    function getEmailAddress() {
-      return sessionStorage.getItem('email');
+  const history = useHistory();
+    function getUsername() {
+      return sessionStorage.getItem('username');
+    }
+    function logout() {
+      sessionStorage.removeItem('username');
+      sessionStorage.removeItem('session');
+      history.push('/');
     }
     return (
           <div>
@@ -25,9 +30,9 @@ export default function Header() {
                   <div class="navbar-item">
                     <div class="buttons">
                       <Link class="button is-primary" to="/">
-                        <small>{getEmailAddress()}</small>
+                        <small>{getUsername()}</small>
                       </Link>
-                      <Link class="button is-light" to="/" onClick={() => auth.logout()}>
+                      <Link class="button is-light" to="/" onClick={logout}>
                         Logout
                       </Link>
                     </div>
