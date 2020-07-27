@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {
   Link,
   Redirect
@@ -28,7 +28,7 @@ export default function Organization() {
                         </ul>
                       </div>
                       <h2 class="subtitle is-4">Organization Details</h2>
-                      <p>For more organization details visit <a href="https://rinkeby.aragon.org/#/token.aragonid.eth" target="_blank">token.aragonid.eth</a></p><hr />
+                      <p>For more organization details visit <a href="https://rinkeby.aragon.org/#/token.aragonid.eth" target="_blank" rel="noopener noreferrer">token.aragonid.eth</a></p><hr />
                       <ul>
                         <li><code>Organization Name</code> token</li>
                         <li><code>Organization Address</code> 0xFa1D07FC5E86D74165197c90Dde410A3c921511D</li>
