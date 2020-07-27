@@ -14,6 +14,7 @@ export default function Settings() {
       const [currentAddress, setCurrentAddress] = useState('')
 
       function changeAddress() {
+        // eslint-disable-next-line
         axios.get('https://droplink.gokdeniz.me/change_address?address=' + address + '&' + 'session=' + sessionStorage.getItem('session'))
           .then((response) => {
             var response_data = response.data
