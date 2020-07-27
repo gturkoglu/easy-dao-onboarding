@@ -2,6 +2,14 @@
 
 This project works with [droplink](https://github.com/gturkoglu/droplink).
 
+## Releases
+
+* `v1.0.0` is accessible on https://coordinated-hand.surge.sh/
+   * Even though this version works, I don't recommend to use this version since next version have more cool features!
+   
+* `v1.0.1` is accessible on https://dao-onboarding.surge.sh/
+  * This version is the latest version for now and only depends on droplink for user management and sending DAO membership tokens.
+
 ## Features
 
 This app is very simple since it aims to keep DAO onboarding process easy. 
