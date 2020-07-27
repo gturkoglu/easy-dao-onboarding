@@ -12,5 +12,5 @@ This app is very simple since it aims to keep DAO onboarding process easy.
 
 * Viewing DAO organization details
 	* Organization name
-	* Token holders
+	* Addresses related to organization
 	
