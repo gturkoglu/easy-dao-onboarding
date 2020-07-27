@@ -47,19 +47,19 @@ export default function Register() {
                     <h2 class="subtitle">You need to create an account to use Easy DAO Onboarding</h2>
                     <hr/>
                     <div class="field">
-                      <label class="label">Username</label>
+                      <label class="label">Username*</label>
                       <div class="control">
                         <input class="input" type="text" placeholder="Username" onChange={event => setUsername(event.target.value)}/>
                       </div>
                     </div>
                     <div class="field">
-                      <label class="label">Password</label>
+                      <label class="label">Password*</label>
                       <div class="control">
                         <input class="input" type="password" placeholder="Password" onChange={event => setPassword(event.target.value)}/>
                       </div>
                     </div>
                     <div class="field">
-                      <label class="label">Ethereum address</label>
+                      <label class="label">Ethereum address*</label>
                       <div class="control">
                         <input class="input" type="text" placeholder="Ethereum address" onChange={event => setAddress(event.target.value)}/>
                       </div>
