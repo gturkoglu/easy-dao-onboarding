@@ -11,6 +11,7 @@ import axios from 'axios';
 export default function Settings() {
       const alert = useAlert()
       const [address, setAddress] = useState('')
+      const [currentAddress, setCurrentAddress] = useState('')
 
       function changeAddress() {
         axios.get('https://droplink.gokdeniz.me/change_address?address=' + address + '&' + 'session=' + sessionStorage.getItem('session'))
@@ -24,6 +25,16 @@ export default function Settings() {
               alert.success(response_message)
             }
           });
+      }
+
+      function getAddress() {
+        axios.get('https://droplink.gokdeniz.me/get_address?session=' + sessionStorage.getItem('session'))
+          .then((response) => {
+            var response_data = response.data
+            var response_message = response_data["message"]
+            setCurrentAddress(response_message)
+          });
+          return currentAddress;
       }
 
       if (sessionStorage.getItem("session")) {
@@ -50,6 +61,7 @@ export default function Settings() {
                       <p>You can edit your account settings here.</p>
                       <hr/>
                       <h6 class="subtitle is-5">Change Ethereum address</h6>
+                      <p>Your current Ethereum address is {getAddress()}</p><br/>
                       <div class="field is-horizontal">
                         <div class="field-body">
                           <div class="field">
