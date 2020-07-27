@@ -9,6 +9,8 @@ This project works with [droplink](https://github.com/gturkoglu/droplink).
    
 * `v1.0.1` is accessible on https://dao-onboarding-v1-0-1.surge.sh/
   * This version only depends on droplink for user management and sending DAO membership tokens.
+  
+* There aren't special builds for releases between `v1.0.1` and current release since there are several minor bug fixes and additions.
 
 * Latest release is always accessible on https://dao-onboarding.surge.sh/
 
