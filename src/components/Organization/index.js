@@ -1,21 +1,13 @@
 import React, {useState} from "react";
 import {
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
-import useMagicLink from 'use-magic-link';
 import Header from '../Header';
 
 
-export default function Home() {
-      const [email, setEmail] = useState('')
-
-      const auth = useMagicLink('pk_live_12C2C7AA4E904206');
-      function loginNow() {
-          sessionStorage.setItem('email', email);
-          auth.login(email);
-      }
-
-      if (auth.loggedIn) {
+export default function Organization() {
+      if (sessionStorage.getItem("session")) {
 
 
       return (
@@ -32,10 +24,11 @@ export default function Home() {
                         <ul>
                           <li><Link to="/">Claim token</Link></li>
                           <li class="is-active"><Link to="/organization">Organization</Link></li>
+                          <li><Link to="/settings">Settings</Link></li>
                         </ul>
                       </div>
-                      <h2 class="subtitle">Organization Details</h2>
-                      <p>For more organization details visit <a href="https://rinkeby.aragon.org/#/token.aragonid.eth" target="_blank">token.aragonid.eth</a></p><br />
+                      <h2 class="subtitle is-4">Organization Details</h2>
+                      <p>For more organization details visit <a href="https://rinkeby.aragon.org/#/token.aragonid.eth" target="_blank">token.aragonid.eth</a></p><hr />
                       <ul>
                         <li><code>Organization Name</code> token</li>
                         <li><code>Organization Address</code> 0xFa1D07FC5E86D74165197c90Dde410A3c921511D</li>
@@ -58,26 +51,7 @@ export default function Home() {
         );
     } else {
     return (
-          <div>
-            <div class="container">
-              <br />
-              <div class="columns is-centered">
-                <div class="column is-half">
-                  <div class="box">
-                    <h1 class="title">Easy DAO Onboarding</h1>
-                    <h2 class="subtitle">You need to enter your e-mail address to login</h2>
-                    <div class="field">
-                      <label class="label">E-mail</label>
-                      <div class="control">
-                        <input class="input" type="email" placeholder="john@example.com" onChange={event => setEmail(event.target.value)}/>
-                      </div>
-                    </div>
-                    <button class="button is-primary" onClick={loginNow}>Login</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Redirect to="/" />
       );
   }
 }
